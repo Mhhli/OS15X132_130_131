@@ -38,7 +38,7 @@ In timer_sleep():
 
 In the timer interrupt handler(timer_interrupt()):
 1) Invoke function thread_foreach() to do blocked_thread_check() for every thread.
-2) The paramenter of thread_forech()¡ª¡ªblocked_thread_check() is defined in thread.h and 
+2) The paramenter of thread_forech()————blocked_thread_check() is defined in thread.h and 
    realized in thread.c.
 3) The function blocked_thread_check() is to check the thread. If the thread is blocked and
    the value ticks_blocked > 0, ticks_blocked will decrease. Then,if ticks_blocked = 0,the 
