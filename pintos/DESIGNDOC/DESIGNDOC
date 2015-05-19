@@ -195,9 +195,7 @@ A potential race condition would be while the thread priority variable is being 
 new priority, the interrupt handler is writing to the priority variable. Thus, these conflicting
 writes could mangle the priority variable, therefore being a race condition.
 
-We use function list_empty() to whether current thread's donate_lock_list to avoid it. If the list
-is empty, then set current thread's priority to be new_priority. We think we may not use locks because
-the interrupt handler cannot acquire locks.
+We use variable wanting_lock to realize threads to get resourse.
 
 ---- RATIONALE ----
 
