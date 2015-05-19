@@ -5,9 +5,9 @@
 			+--------------------+
 
 ---- GROUP ----
-ÀîÊ÷éª <10132510132@ecnu.edu>
-ÂŞÀ½öÎ <10132510131@ecnu.edu>
-Àî  Õğ <10132510130@ecnu.edu>
+ææ ‘æ¥  <10132510132@ecnu.edu>
+ç½—æ¾œé‘« <10132510131@ecnu.edu>
+æ  éœ‡ <10132510130@ecnu.edu>
 
 			     ALARM CLOCK
 			     ===========
@@ -38,7 +38,7 @@ In timer_sleep():
 
 In the timer interrupt handler(timer_interrupt()):
 1) Invoke function thread_foreach() to do blocked_thread_check() for every thread.
-2) The paramenter of thread_forech()¡ª¡ªblocked_thread_check() is defined in thread.h and 
+2) The paramenter of thread_forech()Â¡ÂªÂ¡Âªblocked_thread_check() is defined in thread.h and 
    realized in thread.c.
 3) The function blocked_thread_check() is to check the thread. If the thread is blocked and
    the value ticks_blocked > 0, ticks_blocked will decrease. Then,if ticks_blocked = 0,the 
@@ -345,8 +345,9 @@ We would give more hints with regards to the priority donation problem.
 >> Do you have any suggestions for the TAs to more effectively assist
 >> students, either for future quarters or the remaining projects?
 
-We don't know....
+We think TAs can communicate with student not only by Wechat but also other ways.
 
 >> Any other comments?
 
 Ah, we have finished this project. Although we search a lot on the Internet, we have known a lot about this project.
+We know OS deeper.
