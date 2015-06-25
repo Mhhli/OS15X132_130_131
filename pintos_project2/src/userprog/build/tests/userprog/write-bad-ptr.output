@@ -1,0 +1,36 @@
+Copying tests/userprog/write-bad-ptr to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+squish-pty bochs -q
+PiLo
+hda1
+...........Kernel command line: -q -f extract run write-bad-ptr
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hda: 5,040 sectors (2 MB), model "BXHD00011", serial "Generic 1234"
+hda1: 186 sectors (93 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 103 sectors (51 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'write-bad-ptr' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'write-bad-ptr':
+Kernel PANIC at ../../threads/thread.c:365 in thread_unblock(): assertion `t->status == THREAD_BLOCKED' failed.
+Call stack: 0xc0028e6e 0x1.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Timer: 525 ticks
+Thread: 30 idle ticks, 419 kernel ticks, 76 user ticks
+hda2 (filesys): 137 reads, 168 writes
+hda3 (scratch): 102 reads, 2 writes
+Console: 1150 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off..

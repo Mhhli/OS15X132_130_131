@@ -1,0 +1,6 @@
+Constant subroutine main::SEEK_SET redefined at /usr/lib/perl5/5.10.0/Exporter.pm line 66.
+ at /usr/bin/pintos line 8
+Constant subroutine main::SEEK_CUR redefined at /usr/lib/perl5/5.10.0/Exporter.pm line 66.
+ at /usr/bin/pintos line 8
+Can't locate /usr/bin/Pintos.pm in @INC (@INC contains: /usr/lib/perl5/5.10.0/i586-linux-thread-multi /usr/lib/perl5/5.10.0 /usr/lib/perl5/site_perl/5.10.0/i586-linux-thread-multi /usr/lib/perl5/site_perl/5.10.0 /usr/lib/perl5/vendor_perl/5.10.0/i586-linux-thread-multi /usr/lib/perl5/vendor_perl/5.10.0 /usr/lib/perl5/vendor_perl .) at /usr/bin/pintos line 11.
+BEGIN failed--compilation aborted at /usr/bin/pintos line 11.

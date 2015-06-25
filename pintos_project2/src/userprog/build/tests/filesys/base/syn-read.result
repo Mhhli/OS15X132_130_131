@@ -1,0 +1,7 @@
+FAIL
+Kernel panic in run: PANIC at ../../lib/kernel/list.c:439 in list_sort(): assertion `is_sorted (list_begin (list), list_end (list), less, aux)' failed.
+Call stack: 0xc0028e6e 0x8b302444
+Translation of call stack:
+In kernel.o:
+0xc0028e6e: debug_panic (.../../lib/kernel/debug.c:38)
+0x8b302444: (unknown)

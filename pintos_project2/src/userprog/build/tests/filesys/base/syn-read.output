@@ -1,0 +1,87 @@
+Copying tests/filesys/base/syn-read to scratch partition...
+Copying tests/filesys/base/child-syn-read to scratch partition...
+squish-pty bochs -q
+PiLo
+hda1
+...........Kernel command line: -q -f extract run syn-read
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hda: 5,040 sectors (2 MB), model "BXHD00011", serial "Generic 1234"
+hda1: 186 sectors (93 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 225 sectors (112 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'syn-read' into the file system...
+Putting 'child-syn-read' into the file system...
+Erasing ustar archive...
+Executing 'syn-read':
+(syn-read) begin
+(syn-read) create "data"
+(syn-read) open "data"
+(syn-read) write "data"
+(syn-read) close "data"
+(syn-read) exec child 1 of 10: "child-syn-read 0"
+(syn-read) exec child 2 of 10: "child-syn-read 1"
+(child-syn-read) 1 bytes read starting at offset 0 in "data" differ from expected.
+(child-syn-read) Data actually read:
+00000000  00                                              |.               |
+(child-syn-read) Expected data:
+00000000  de                                              |.               |
+(child-syn-read) 1 bytes read starting at offset 0 in "data" differ from expected: FAILED
+child-syn-read: exit(1)
+(child-syn-read) 1 bytes read starting at offset 0 in "data" differ from expected.
+(child-syn-read) Data actually read:
+00000000  00          (syn-read) exec child 3 of 10: "child-syn-read 2"
+                                    |.               |
+(child-syn-read) Expected data:
+00000000  de                                              |.               |
+(child-syn-read) 1 bytes read starting at offset 0 in "data" differ from expected: FAILED
+child-syn-read: exit(1)
+(syn-read) exec child 4 of 10: "child-syn-read 3"
+(child-syn-read) 1 bytes read starting at offset 0 in "data" differ from expected.
+(child-syn-read) Data actually read:
+00000000  00                                              |.               |
+(child-syn-read) Expected data:
+00000000  de                                              |.               |
+(child-syn-read) 1 bytes read starting at offset 0 in "data" differ from expected: FAILED
+child-syn-read: exit(1)
+Kernel PANIC at ../../lib/kernel/list.c:439 in list_sort(): assertion `is_sorted (list_begin (list), list_end (list), less, aux)' failed.
+Call stack: 0xc0028e6e 0x8b302444Kernel PANIC recursion at ../../threads/synch.c:210 in lock_acquire().
+PiLo
+hda1
+...........Kernel command line: -q -f extract run syn-read
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hda: 5,040 sectors (2 MB), model "BXHD00011", serial "Generic 1234"
+hda1: 186 sectors (93 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 225 sectors (112 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Erasing ustar archive...
+Executing 'syn-read':
+load: syn-read: open failed
+Kernel PANIC at ../../threads/thread.c:365 in thread_unblock(): assertion `t->status == THREAD_BLOCKED' failed.
+Call stack: 0xc0028e6e 0x1.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Timer: 158 ticks
+Thread: 30 idle ticks, 121 kernel ticks, 7 user ticks
+hda2 (filesys): 5 reads, 4 writes
+hda3 (scratch): 1 reads, 2 writes
+Console: 1069 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off..

@@ -1,0 +1,48 @@
+Copying tests/userprog/read-normal to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+squish-pty bochs -q
+PiLo
+hda1
+...........Kernel command line: -q -f extract run read-normal
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hda: 5,040 sectors (2 MB), model "BXHD00011", serial "Generic 1234"
+hda1: 186 sectors (93 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 103 sectors (51 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'read-normal' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'read-normal':
+(read-normal) begin
+(read-normal) open "sample.txt" for verification
+(read-normal) 239 bytes read starting at offset 0 in "sample.txt" differ from expected.
+(read-normal) Showing first differing 64 bytes.
+(read-normal) Data actually read:
+00000000  00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 |................|
+00000010  00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 |................|
+00000020  00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 |................|
+00000030  00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 |................|
+(read-normal) Expected data:
+00000000  22 41 6d 61 7a 69 6e 67-20 45 6c 65 63 74 72 6f |"Amazing Electro|
+00000010  6e 69 63 20 46 61 63 74-3a 20 49 66 20 79 6f 75 |nic Fact: If you|
+00000020  20 73 63 75 66 66 65 64-20 79 6f 75 72 20 66 65 | scuffed your fe|
+00000030  65 74 20 6c 6f 6e 67 20-65 6e 6f 75 67 68 20 77 |et long enough w|
+(read-normal) 239 bytes read starting at offset 0 in "sample.txt" differ from expected: FAILED
+read-normal: exit(1)
+Execution of 'read-normal' complete.
+Timer: 689 ticks
+Thread: 30 idle ticks, 441 kernel ticks, 224 user ticks
+hda2 (filesys): 142 reads, 169 writes
+hda3 (scratch): 102 reads, 2 writes
+Console: 1888 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

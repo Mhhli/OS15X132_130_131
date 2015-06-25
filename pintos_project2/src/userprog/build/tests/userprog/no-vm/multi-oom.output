@@ -1,0 +1,102 @@
+Copying tests/userprog/no-vm/multi-oom to scratch partition...
+squish-pty bochs -q
+PiLo
+hda1
+...........Kernel command line: -q -f extract run multi-oom
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hda: 5,040 sectors (2 MB), model "BXHD00011", serial "Generic 1234"
+hda1: 186 sectors (93 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 119 sectors (59 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'multi-oom' into the file system...
+Erasing ustar archive...
+Executing 'multi-oom':
+(multi-oom) begin
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+Failed to deal with page fault! Killing thread
+multi-oom: dying due to interrupt 0x0e (#PF Page-Fault Exception).
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0x8048106
+ cr2=c0000000 error=00000005
+ eax=2172beca ebx=00000015 ecx=00000005 edx=00000002
+ esi=bfffffe0 edi=00000000 esp=bffffed0 ebp=bfffffb0
+ cs=001b ds=0023 es=0023 ss=0023
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+Failed to deal with page fault! Killing thread
+multi-oom: dying due to interrupt 0x0e (#PF Page-Fault Exception).
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0x8048106
+ cr2=c0000000 error=00000005
+ eax=03b45a13 ebx=00000018 ecx=00000005 edx=00000002
+ esi=bfffffe0 edi=00000000 esp=bffffed0 ebp=bfffffb0
+ cs=001b ds=0023 es=0023 ss=0023
+multi-oom: exit(-1)
+Failed to deal with page fault! Killing thread
+multi-oom: dying due to interrupt 0x0e (#PF Page-Fault Exception).
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0x80480f5
+ cr2=00000000 error=00000006
+ eax=132e1c8f ebx=00000019 ecx=00000005 edx=00000000
+ esi=bfffffe0 edi=00000000 esp=bffffed0 ebp=bfffffb0
+ cs=001b ds=0023 es=0023 ss=0023
+multi-oom: exit(-1)
+Failed to deal with page fault! Killing thread
+multi-oom: dying due to interrupt 0x0e (#PF Page-Fault Exception).
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0x804810d
+ cr2=c0000000 error=00000007
+ eax=189c8905 ebx=0000001a ecx=00000005 edx=00000003
+ esi=bfffffe0 edi=00000000 esp=bffffed0 ebp=bfffffb0
+ cs=001b ds=0023 es=0023 ss=0023
+multi-oom: exit(-1)
+Failed to deal with page fault! Killing thread
+multi-oom: dying due to interrupt 0x0e (#PF Page-Fault Exception).
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0x80480ff
+ cr2=00000000 error=00000004
+ eax=0dc524c6 ebx=0000001b ecx=00000005 edx=00000001
+ esi=bfffffe0 edi=00000000 esp=bffffed0 ebp=bfffffb0
+ cs=001b ds=0023 es=0023 ss=0023
+multi-oom: exit(-1)
+Kernel PANIC at ../../threads/synch.c:210 in lock_acquire(): assertion `!intr_context()' failed.
+Call stack: 0xc0028e6e.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Kernel PANIC recursion at ../../threads/synch.c:210 in lock_acquire().
+PiLo
+hda1
+...........Kernel command line: -q -f extract run multi-oom
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hda: 5,040 sectors (2 MB), model "BXHD00011", serial "Generic 1234"
+hda1: 186 sectors (93 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 119 sectors (59 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Erasing ustar archive...
+Executing 'multi-oom':
+load: multi-oom: open failed
+Execution of 'multi-oom' complete.
+Timer: 168 ticks
+Thread: 30 idle ticks, 134 kernel ticks, 9 user ticks
+hda2 (filesys): 5 reads, 4 writes
+hda3 (scratch): 1 reads, 2 writes
+Console: 812 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

@@ -1,0 +1,82 @@
+Copying tests/filesys/base/syn-write to scratch partition...
+Copying tests/filesys/base/child-syn-wrt to scratch partition...
+squish-pty bochs -q
+PiLo
+hda1
+...........Kernel command line: -q -f extract run syn-write
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hda: 5,040 sectors (2 MB), model "BXHD00011", serial "Generic 1234"
+hda1: 186 sectors (93 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 224 sectors (112 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'syn-write' into the file system...
+Putting 'child-syn-wrt' into the file system...
+Erasing ustar archive...
+Executing 'syn-write':
+(syn-write) begin
+(syn-write) create "stuff"
+(syn-write) exec child 1 of 10: "child-syn-wrt 0"
+(syn-write) exec child 2 of 10: "child-syn-wrt 1"
+child-syn-wrt: exit(0)
+(syn-write) exec child 3 of 10: "child-syn-wrt 2"
+child-syn-wrt: exit(1)
+(syn-write) exec child 4 of 10: "child-syn-wrt 3"
+child-syn-wrt: exit(2)
+(syn-write) exec child 5 of 10: "child-syn-wrt 4"
+child-syn-wrt: exit(3)
+(syn-write) exec child 6 of 10: "child-syn-wrt 5"
+child-syn-wrt: exit(4)
+(syn-write) exec child 7 of 10: "child-syn-wrt 6"
+child-syn-wrt: exit(5)
+(syn-write) exec child 8 of 10: "child-syn-wrt 7"
+child-syn-wrt: exit(6)
+(syn-write) exec child 9 of 10: "child-syn-wrt 8"
+child-syn-wrt: exit(7)
+(syn-write) exec child 10 of 10: "child-syn-wrt 9"
+Kernel PANIC at ../../lib/kernel/list.c:84 in list_next(): assertion `is_head (elem) || is_interior (elem)' failed.
+Call stack: 0xc0028e6e.
+The `backtrace' program can make call stacks useful.
+Read "Backtraces" in the "Debugging Tools" chapter
+of the Pintos documentation for more information.
+Kernel PANIC recursion at ../../lib/kernel/list.c:84 in list_next().
+Interrupt 0x03 (#BP Breakpoint Exception) at eip=0xc010704d
+ cr2=ccccccd0 error=00000000
+ eax=ffffffff ebx=c010704c ecx=cccccccc edx=c010704c
+ esi=c0038820 edi=c0107000 esp=c0038820 ebp=c0038838
+ cs=0008 ds=0010 es=0010 ss=e000
+PiLo
+hda1
+...........Kernel command line: -q -f extract run syn-write
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hda: 5,040 sectors (2 MB), model "BXHD00011", serial "Generic 1234"
+hda1: 186 sectors (93 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 224 sectors (112 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Erasing ustar archive...
+Executing 'syn-write':
+load: syn-write: open failed
+Execution of 'syn-write' complete.
+Timer: 168 ticks
+Thread: 30 idle ticks, 134 kernel ticks, 9 user ticks
+hda2 (filesys): 5 reads, 4 writes
+hda3 (scratch): 1 reads, 2 writes
+Console: 813 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
